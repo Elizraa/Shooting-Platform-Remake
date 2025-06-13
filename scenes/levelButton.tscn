@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbvnny8y6rnm0"]
+
+[ext_resource type="FontFile" uid="uid://ce72aqbgp5gf8" path="res://assets/Fonts/PixelOperator8.ttf" id="1_e2yxa"]
+[ext_resource type="Script" uid="uid://5dts3crstwjw" path="res://scenes/levelButton.gd" id="2_t5iqv"]
+
+[node name="Level1" type="Button"]
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_e2yxa")
+text = "1"
+script = ExtResource("2_t5iqv")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
