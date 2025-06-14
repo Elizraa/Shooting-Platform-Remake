@@ -264,7 +264,6 @@ sources/2 = SubResource("TileSetAtlasSource_acd57")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_y6k1g"]
 
 [node name="Game" type="Node2D"]
-texture_filter = 1
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -276,7 +275,6 @@ follow_viewport_enabled = true
 
 [node name="BulletLeft" type="Label" parent="GameManager/CanvasLayer"]
 modulate = Color(0, 0, 0, 1)
-texture_filter = 1
 offset_left = -135.0
 offset_top = -163.0
 offset_right = -70.0
