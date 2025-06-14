@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bk1p55lgqhglw"]
+[gd_scene load_steps=15 format=4 uid="uid://bk1p55lgqhglw"]
 
 [ext_resource type="PackedScene" uid="uid://b3a1pwjllge5l" path="res://scenes/player.tscn" id="1_aw4w0"]
 [ext_resource type="Script" uid="uid://bjwslhv3cn5dl" path="res://scripts/GameManager.gd" id="1_yxuco"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b7shu34y3lprt" path="res://scenes/killzone.tscn" id="3_f24e0"]
 [ext_resource type="Texture2D" uid="uid://dw51emc5xdt13" path="res://assets/Background/Blue.png" id="3_x050t"]
 [ext_resource type="Texture2D" uid="uid://c4ainto2xuso4" path="res://assets/Background/Gray.png" id="4_6apb1"]
+[ext_resource type="PackedScene" uid="uid://rurki30tstks" path="res://scenes/finish.tscn" id="8_8a7m2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7pft"]
 texture = ExtResource("2_johp2")
@@ -263,6 +264,8 @@ sources/2 = SubResource("TileSetAtlasSource_acd57")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_y6k1g"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8a7m2"]
+
 [node name="Game" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
@@ -318,3 +321,12 @@ position = Vector2(0, -17)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(0, 71)
 shape = SubResource("WorldBoundaryShape2D_y6k1g")
+
+[node name="Finish" parent="." instance=ExtResource("8_8a7m2")]
+position = Vector2(-66, -22)
+nextLevel = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
+position = Vector2(268, -6)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_8a7m2")

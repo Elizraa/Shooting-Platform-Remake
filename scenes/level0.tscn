@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bcr4cccut4lib"]
+[gd_scene load_steps=16 format=4 uid="uid://bcr4cccut4lib"]
 
 [ext_resource type="Script" uid="uid://bjwslhv3cn5dl" path="res://scripts/GameManager.gd" id="1_hhnvw"]
 [ext_resource type="FontFile" uid="uid://ce72aqbgp5gf8" path="res://assets/Fonts/PixelOperator8.ttf" id="2_mmvkc"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c4ainto2xuso4" path="res://assets/Background/Gray.png" id="6_fgoa1"]
 [ext_resource type="PackedScene" uid="uid://b7shu34y3lprt" path="res://scenes/killzone.tscn" id="7_03f36"]
 [ext_resource type="PackedScene" uid="uid://dlrrw3ebuuj0e" path="res://scenes/menu.tscn" id="8_m15ul"]
+[ext_resource type="PackedScene" uid="uid://rurki30tstks" path="res://scenes/finish.tscn" id="9_tcqsn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7pft"]
 texture = ExtResource("4_plxfw")
@@ -304,6 +305,8 @@ sources/2 = SubResource("TileSetAtlasSource_acd57")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_y6k1g"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6q6d4"]
+
 [node name="Game" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
@@ -358,7 +361,15 @@ position = Vector2(0, 71)
 shape = SubResource("WorldBoundaryShape2D_y6k1g")
 
 [node name="Menu" parent="." instance=ExtResource("8_m15ul")]
-offset_left = -94.0
-offset_top = -87.0
-offset_right = -94.0
-offset_bottom = -87.0
+offset_left = -53.0
+offset_top = -63.0
+offset_right = -53.0
+offset_bottom = -63.0
+
+[node name="Finish" parent="." instance=ExtResource("9_tcqsn")]
+position = Vector2(-68, -31)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
+position = Vector2(268, -6)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_6q6d4")
