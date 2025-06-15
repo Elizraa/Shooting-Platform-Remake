@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bbvnny8y6rnm0"]
 
 [ext_resource type="FontFile" uid="uid://ce72aqbgp5gf8" path="res://assets/Fonts/PixelOperator8.ttf" id="1_e2yxa"]
-[ext_resource type="Script" uid="uid://5dts3crstwjw" path="res://scenes/levelButton.gd" id="2_t5iqv"]
+[ext_resource type="Script" uid="uid://5dts3crstwjw" path="res://scripts/levelButton.gd" id="2_t5iqv"]
 
 [node name="Level1" type="Button"]
 size_flags_horizontal = 4

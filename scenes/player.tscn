@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dxtmomah2ivq2" path="res://scripts/player.gd" id="1_sl8ee"]
 [ext_resource type="Texture2D" uid="uid://dilccb51aanak" path="res://assets/Main Characters/Mask Dude/Idle (32x32).png" id="1_wkyt3"]
-[ext_resource type="PackedScene" uid="uid://0si5cvefylx7" path="res://scenes/platform.tscn" id="2_4f025"]
+[ext_resource type="PackedScene" uid="uid://0si5cvefylx7" path="res://scenes/platforms/platformBullet.tscn" id="2_4f025"]
 [ext_resource type="Texture2D" uid="uid://b13d0jgn4hepk" path="res://assets/Main Characters/Mask Dude/Run (32x32).png" id="4_c84s4"]
 [ext_resource type="Texture2D" uid="uid://cjbwdhp84285x" path="res://assets/Main Characters/Mask Dude/Jump (32x32).png" id="4_x8stv"]
 [ext_resource type="AudioStream" uid="uid://divqy7b3jck5s" path="res://assets/Sounds/jump.wav" id="6_odxdc"]
@@ -206,7 +206,7 @@ platform_scene = ExtResource("2_4f025")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_rmjfq")
-animation = &"running"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

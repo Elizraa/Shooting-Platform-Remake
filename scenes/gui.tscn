@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://eqaoonkgmmml"]
+
+[ext_resource type="Texture2D" uid="uid://cflwguviwkrb4" path="res://assets/Menu/HomeButton.png" id="1_efmwq"]
+[ext_resource type="Script" uid="uid://djja2q35toxmc" path="res://scripts/home_button.gd" id="2_mfius"]
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.19, 0.19)
+
+[node name="HomeButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 144.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_efmwq")
+script = ExtResource("2_mfius")
+
+[connection signal="pressed" from="HomeButton" to="HomeButton" method="_on_pressed"]

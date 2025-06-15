@@ -23,10 +23,11 @@ offset_right = 37.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-columns = 3
+columns = 6
 
 [node name="Level1" parent="GridContainer" instance=ExtResource("1_fmhw2")]
 layout_mode = 2
+icon_alignment = 1
 
 [node name="Level2" parent="GridContainer" instance=ExtResource("1_fmhw2")]
 layout_mode = 2
@@ -35,3 +36,15 @@ text = "2"
 [node name="Level3" parent="GridContainer" instance=ExtResource("1_fmhw2")]
 layout_mode = 2
 text = "3"
+
+[node name="Level4" parent="GridContainer" instance=ExtResource("1_fmhw2")]
+layout_mode = 2
+text = "4"
+
+[node name="Level5" parent="GridContainer" instance=ExtResource("1_fmhw2")]
+layout_mode = 2
+text = "5"
+
+[node name="Level6" parent="GridContainer" instance=ExtResource("1_fmhw2")]
+layout_mode = 2
+text = "6"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b7shu34y3lprt"]
 
-[ext_resource type="Script" uid="uid://ddfkn1y31ins6" path="res://scenes/killzone.gd" id="1_03ill"]
+[ext_resource type="Script" uid="uid://ddfkn1y31ins6" path="res://scripts/killzone.gd" id="1_03ill"]
 
 [node name="Killzone" type="Area2D"]
 collision_mask = 2

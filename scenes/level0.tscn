@@ -336,7 +336,6 @@ position_smoothing_speed = 7.0
 
 [node name="Player" parent="." instance=ExtResource("3_xva4l")]
 position = Vector2(69, -167)
-collision_layer = 2
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -354,22 +353,21 @@ tile_set = SubResource("TileSet_7s3f4")
 
 [node name="Killzone" parent="." instance=ExtResource("7_03f36")]
 position = Vector2(0, -17)
-collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(0, 71)
 shape = SubResource("WorldBoundaryShape2D_y6k1g")
 
 [node name="Menu" parent="." instance=ExtResource("8_m15ul")]
-offset_left = -53.0
-offset_top = -63.0
-offset_right = -53.0
-offset_bottom = -63.0
+offset_left = -2.0
+offset_top = -47.0
+offset_right = -2.0
+offset_bottom = -47.0
 
 [node name="Finish" parent="." instance=ExtResource("9_tcqsn")]
-position = Vector2(-68, -31)
+position = Vector2(220, -84)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
-position = Vector2(268, -6)
+position = Vector2(-25, 13)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_6q6d4")

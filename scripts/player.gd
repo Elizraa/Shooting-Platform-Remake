@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 100.0
-const JUMP_VELOCITY = -250.0
+const SPEED = 90.0
+const JUMP_VELOCITY = -240.0
 @onready var shoot_point = $ShootPoint
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var game_manager = %GameManager

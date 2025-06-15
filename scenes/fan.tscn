@@ -1,0 +1,130 @@
+[gd_scene load_steps=24 format=3 uid="uid://d0ahiv8c10kyw"]
+
+[ext_resource type="Texture2D" uid="uid://gi7s6eqqoieg" path="res://assets/Traps/Fan/On (24x8).png" id="1_p64dw"]
+[ext_resource type="Texture2D" uid="uid://cljbq6ja486cn" path="res://assets/Traps/Fan/Winds/W401-1 - Copy.png" id="2_syy5i"]
+[ext_resource type="Texture2D" uid="uid://cyo7qn5vvbus2" path="res://assets/Traps/Fan/Winds/W401-2 - Copy.png" id="3_80u7c"]
+[ext_resource type="Texture2D" uid="uid://de82jedmf0i46" path="res://assets/Traps/Fan/Winds/W401-3 - Copy.png" id="4_g5kyc"]
+[ext_resource type="Texture2D" uid="uid://reqitbmqw3c5" path="res://assets/Traps/Fan/Winds/W401-4 - Copy.png" id="5_vlp0w"]
+[ext_resource type="Texture2D" uid="uid://yn3omj8jkayj" path="res://assets/Traps/Fan/Winds/W401-5 - Copy.png" id="6_inpjv"]
+[ext_resource type="Texture2D" uid="uid://c1ifsmomj3m36" path="res://assets/Traps/Fan/Winds/W401-6 - Copy.png" id="7_omty2"]
+[ext_resource type="Texture2D" uid="uid://b7skavb81ge2o" path="res://assets/Traps/Fan/Winds/W401-7 - Copy.png" id="8_rb17e"]
+[ext_resource type="Texture2D" uid="uid://c1drondhcdxuf" path="res://assets/Traps/Fan/Winds/W401-8 - Copy.png" id="9_wxlde"]
+[ext_resource type="Texture2D" uid="uid://88bymowo6ivl" path="res://assets/Traps/Fan/Winds/W401-9 - Copy.png" id="10_pj73q"]
+[ext_resource type="Texture2D" uid="uid://dx4c0410jsysi" path="res://assets/Traps/Fan/Winds/W401-10 - Copy.png" id="11_ff8bf"]
+[ext_resource type="Texture2D" uid="uid://64cwsnb4srh5" path="res://assets/Traps/Fan/Winds/W401-11 - Copy.png" id="12_7pj34"]
+[ext_resource type="Texture2D" uid="uid://cx86tku1yfk22" path="res://assets/Traps/Fan/Winds/W401-12 - Copy.png" id="13_ujsdd"]
+[ext_resource type="Texture2D" uid="uid://nvklpgbh0mc4" path="res://assets/Traps/Fan/Winds/W401-13 - Copy.png" id="14_qnquc"]
+[ext_resource type="Texture2D" uid="uid://dn8inqpp6qppl" path="res://assets/Traps/Fan/Winds/W401-14 - Copy.png" id="15_3x3pk"]
+[ext_resource type="Texture2D" uid="uid://c1li8flu33me7" path="res://assets/Traps/Fan/Winds/W401-15 - Copy.png" id="16_tl50i"]
+[ext_resource type="Texture2D" uid="uid://cqw8v0ny802s7" path="res://assets/Traps/Fan/Winds/W401-16 - Copy.png" id="17_nkpff"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ib1wi"]
+atlas = ExtResource("1_p64dw")
+region = Rect2(0, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3fxe"]
+atlas = ExtResource("1_p64dw")
+region = Rect2(24, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05mpp"]
+atlas = ExtResource("1_p64dw")
+region = Rect2(48, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01qld"]
+atlas = ExtResource("1_p64dw")
+region = Rect2(72, 0, 24, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4wrgw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib1wi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3fxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05mpp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01qld")
+}],
+"loop": true,
+"name": &"on",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p64dw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_syy5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_80u7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g5kyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vlp0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_inpjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_omty2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rb17e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wxlde")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pj73q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ff8bf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7pj34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ujsdd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qnquc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_3x3pk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_tl50i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_nkpff")
+}],
+"loop": true,
+"name": &"wind",
+"speed": 10.0
+}]
+
+[node name="Fan" type="Node2D"]
+scale = Vector2(0.35, 0.35)
+
+[node name="Fan" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_4wrgw")
+animation = &"on"
+autoplay = "on"
+frame_progress = 0.0465734
+
+[node name="Winds" type="AnimatedSprite2D" parent="."]
+position = Vector2(-14.2857, -171.429)
+rotation = -1.5708
+scale = Vector2(0.75, 0.45)
+sprite_frames = SubResource("SpriteFrames_p64dw")
+animation = &"wind"
+autoplay = "wind"
+frame_progress = 0.905155

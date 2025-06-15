@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bk1p55lgqhglw"]
+[gd_scene load_steps=16 format=4 uid="uid://bk1p55lgqhglw"]
 
 [ext_resource type="PackedScene" uid="uid://b3a1pwjllge5l" path="res://scenes/player.tscn" id="1_aw4w0"]
 [ext_resource type="Script" uid="uid://bjwslhv3cn5dl" path="res://scripts/GameManager.gd" id="1_yxuco"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dw51emc5xdt13" path="res://assets/Background/Blue.png" id="3_x050t"]
 [ext_resource type="Texture2D" uid="uid://c4ainto2xuso4" path="res://assets/Background/Gray.png" id="4_6apb1"]
 [ext_resource type="PackedScene" uid="uid://rurki30tstks" path="res://scenes/finish.tscn" id="8_8a7m2"]
+[ext_resource type="PackedScene" uid="uid://eqaoonkgmmml" path="res://scenes/gui.tscn" id="9_plydf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7pft"]
 texture = ExtResource("2_johp2")
@@ -323,10 +324,17 @@ position = Vector2(0, 71)
 shape = SubResource("WorldBoundaryShape2D_y6k1g")
 
 [node name="Finish" parent="." instance=ExtResource("8_8a7m2")]
-position = Vector2(-66, -22)
+position = Vector2(179, -40)
 nextLevel = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
-position = Vector2(268, -6)
+position = Vector2(-5, 0)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_8a7m2")
+
+[node name="GUI" parent="." instance=ExtResource("9_plydf")]
+offset_left = -179.0
+offset_top = -146.0
+offset_right = -139.0
+offset_bottom = -106.0
+scale = Vector2(0.1, 0.1)
