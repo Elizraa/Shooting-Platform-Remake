@@ -1,5 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://d0ahiv8c10kyw"]
+[gd_scene load_steps=26 format=3 uid="uid://d0ahiv8c10kyw"]
 
+[ext_resource type="Script" uid="uid://7xemactryr5n" path="res://scripts/fan.gd" id="1_80u7c"]
 [ext_resource type="Texture2D" uid="uid://gi7s6eqqoieg" path="res://assets/Traps/Fan/On (24x8).png" id="1_p64dw"]
 [ext_resource type="Texture2D" uid="uid://cljbq6ja486cn" path="res://assets/Traps/Fan/Winds/W401-1 - Copy.png" id="2_syy5i"]
 [ext_resource type="Texture2D" uid="uid://cyo7qn5vvbus2" path="res://assets/Traps/Fan/Winds/W401-2 - Copy.png" id="3_80u7c"]
@@ -110,8 +111,13 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syy5i"]
+size = Vector2(117.143, 394.286)
+
 [node name="Fan" type="Node2D"]
 scale = Vector2(0.35, 0.35)
+script = ExtResource("1_80u7c")
+wind_force = 700.0
 
 [node name="Fan" type="AnimatedSprite2D" parent="."]
 scale = Vector2(5, 5)
@@ -128,3 +134,14 @@ sprite_frames = SubResource("SpriteFrames_p64dw")
 animation = &"wind"
 autoplay = "wind"
 frame_progress = 0.905155
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4.28571, -208.571)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_syy5i")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
