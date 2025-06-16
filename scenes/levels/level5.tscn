@@ -1,18 +1,19 @@
-[gd_scene load_steps=17 format=4 uid="uid://66akijumjxqk"]
+[gd_scene load_steps=18 format=4 uid="uid://dtlfkkcgwtj6y"]
 
-[ext_resource type="Script" uid="uid://bjwslhv3cn5dl" path="res://scripts/GameManager.gd" id="1_g1ckg"]
-[ext_resource type="FontFile" uid="uid://ce72aqbgp5gf8" path="res://assets/Fonts/PixelOperator8.ttf" id="2_t7v7a"]
-[ext_resource type="Texture2D" uid="uid://cixu6ngsf0tti" path="res://assets/Terrain/Terrain (16x16).png" id="3_xx6b8"]
-[ext_resource type="PackedScene" uid="uid://b3a1pwjllge5l" path="res://scenes/player.tscn" id="4_f62st"]
-[ext_resource type="Texture2D" uid="uid://dw51emc5xdt13" path="res://assets/Background/Blue.png" id="5_w24lh"]
-[ext_resource type="Texture2D" uid="uid://c4ainto2xuso4" path="res://assets/Background/Gray.png" id="6_5sfmg"]
-[ext_resource type="PackedScene" uid="uid://b7shu34y3lprt" path="res://scenes/killzone.tscn" id="7_tsmbm"]
-[ext_resource type="PackedScene" uid="uid://eqaoonkgmmml" path="res://scenes/gui.tscn" id="8_y3vdi"]
-[ext_resource type="PackedScene" uid="uid://rurki30tstks" path="res://scenes/finish.tscn" id="9_irrt8"]
-[ext_resource type="PackedScene" uid="uid://d0ahiv8c10kyw" path="res://scenes/fan.tscn" id="11_t7v7a"]
+[ext_resource type="Script" uid="uid://bjwslhv3cn5dl" path="res://scripts/GameManager.gd" id="1_lsgss"]
+[ext_resource type="FontFile" uid="uid://ce72aqbgp5gf8" path="res://assets/Fonts/PixelOperator8.ttf" id="2_sd6f7"]
+[ext_resource type="Texture2D" uid="uid://cixu6ngsf0tti" path="res://assets/Terrain/Terrain (16x16).png" id="3_vnf24"]
+[ext_resource type="PackedScene" uid="uid://b3a1pwjllge5l" path="res://scenes/player.tscn" id="4_pm1y0"]
+[ext_resource type="Texture2D" uid="uid://dw51emc5xdt13" path="res://assets/Background/Blue.png" id="5_2eb3b"]
+[ext_resource type="Texture2D" uid="uid://c4ainto2xuso4" path="res://assets/Background/Gray.png" id="6_kykwg"]
+[ext_resource type="PackedScene" uid="uid://b7shu34y3lprt" path="res://scenes/killzone.tscn" id="7_iyn63"]
+[ext_resource type="PackedScene" uid="uid://driqyq2ai1lai" path="res://scenes/lever.tscn" id="7_lsgss"]
+[ext_resource type="PackedScene" uid="uid://eqaoonkgmmml" path="res://scenes/gui.tscn" id="8_1ix84"]
+[ext_resource type="PackedScene" uid="uid://cbw543qdpm2jv" path="res://scenes/platforms/plattformYellow.tscn" id="8_sd6f7"]
+[ext_resource type="PackedScene" uid="uid://rurki30tstks" path="res://scenes/finish.tscn" id="9_4x4hb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7pft"]
-texture = ExtResource("3_xx6b8")
+texture = ExtResource("3_vnf24")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -235,7 +236,7 @@ texture = ExtResource("3_xx6b8")
 5:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ykbi6"]
-texture = ExtResource("5_w24lh")
+texture = ExtResource("5_2eb3b")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 2:0/size_in_atlas = Vector2i(2, 2)
@@ -246,7 +247,7 @@ texture = ExtResource("5_w24lh")
 0:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_acd57"]
-texture = ExtResource("6_5sfmg")
+texture = ExtResource("6_kykwg")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 2:0/size_in_atlas = Vector2i(2, 2)
@@ -272,7 +273,7 @@ sources/2 = SubResource("TileSetAtlasSource_acd57")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("1_g1ckg")
+script = ExtResource("1_lsgss")
 bullets = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
@@ -286,14 +287,14 @@ offset_top = -163.0
 offset_right = -70.0
 offset_bottom = -154.0
 scale = Vector2(1.57289, 1.57289)
-theme_override_fonts/font = ExtResource("2_t7v7a")
+theme_override_fonts/font = ExtResource("2_sd6f7")
 theme_override_font_sizes/font_size = 8
 text = "xX"
 
 [node name="Sprite2D" type="Sprite2D" parent="GameManager/CanvasLayer"]
 position = Vector2(-159, -156)
 scale = Vector2(0.843241, 1.34919)
-texture = ExtResource("3_xx6b8")
+texture = ExtResource("3_vnf24")
 region_enabled = true
 region_rect = Rect2(272, 16, 48, 5)
 
@@ -302,7 +303,7 @@ position = Vector2(0, -63)
 zoom = Vector2(3, 3)
 position_smoothing_speed = 7.0
 
-[node name="Player" parent="." instance=ExtResource("4_f62st")]
+[node name="Player" parent="." instance=ExtResource("4_pm1y0")]
 position = Vector2(-188, -22)
 
 [node name="Tilemap" type="Node2D" parent="."]
@@ -315,42 +316,46 @@ tile_set = SubResource("TileSet_7s3f4")
 [node name="Ground" type="TileMapLayer" parent="Tilemap"]
 z_index = 1
 use_parent_material = true
-tile_map_data = PackedByteArray("AADy//v/AAAPAAAAAADy//z/AAAPAAEAAADy//3/AAAPAAIAAADy//7/AAAPAAAAAADy////AAAPAAEAAADy/wAAAAAPAAIAAADy/wEAAAAHAAEAAADy/wIAAAAHAAEAAADz////AAAHAAAAAAD0////AAAGAAAAAAD1////AAAHAAAAAAD2////AAAHAAAAAAD3////AAAHAAAAAAD4////AAAIAAAAAAANAPv/AAAPAAAAAAANAPz/AAAPAAEAAAANAP3/AAAPAAIAAAANAP7/AAAPAAAAAAANAP//AAAPAAEAAAANAAAAAAAPAAIAAAANAAEAAAAHAAEAAAANAAIAAAAHAAEAAAD0/wAAAAAGAAEAAAD0/wEAAAAGAAEAAAD0/wIAAAAGAAIAAAD1/wIAAAAHAAIAAAD2/wIAAAAHAAIAAAD2/wEAAAAHAAEAAAD2/wAAAAAHAAEAAAD3/wAAAAAHAAEAAAD1/wAAAAAHAAEAAAD1/wEAAAAHAAEAAAD3/wIAAAAHAAIAAAD3/wEAAAAHAAEAAAD4/wEAAAAIAAEAAAD4/wAAAAAIAAEAAAD4/wIAAAAIAAIAAADz/wEAAAAHAAEAAADz/wAAAAAHAAEAAADz/wIAAAAHAAEAAAANAPj/AAAPAAAAAAANAPn/AAAPAAEAAAANAPr/AAAPAAIAAAANAPX/AAAPAAAAAAANAPb/AAAPAAEAAAANAPf/AAAPAAIAAAANAPL/AAAPAAAAAAANAPP/AAAPAAEAAAANAPT/AAAPAAIAAAAMAAEAAAAGAAEAAADy//j/AAAPAAAAAADy//n/AAAPAAEAAADy//r/AAAPAAIAAAAMAPj/AAAGAAAAAAAMAPn/AAAGAAEAAAAMAPr/AAAGAAEAAAAMAPv/AAAGAAEAAAAMAP7/AAAGAAEAAAAMAP//AAAGAAEAAAAMAAAAAAAGAAEAAAAMAAIAAAAGAAEAAAAMAPz/AAAGAAEAAAAMAP3/AAAGAAEAAAAIAPj/AAAHAAAAAAAIAPn/AAAHAAEAAAAIAPr/AAAKAAAAAAAJAPj/AAAHAAAAAAAJAPn/AAAHAAEAAAAJAPr/AAAHAAEAAAAKAPj/AAAHAAAAAAAKAPn/AAAHAAEAAAAKAPr/AAAHAAEAAAALAPj/AAAIAAAAAAALAPn/AAAIAAEAAAALAPr/AAAIAAEAAAAIAPv/AAAGAAIAAAAJAPv/AAAHAAIAAAAKAPv/AAAHAAIAAAALAPv/AAAIAAIAAADy//X/AAAPAAAAAADy//b/AAAPAAEAAADy//f/AAAPAAIAAAAFAPj/AAAGAAAAAAAFAPn/AAAGAAIAAAAGAPj/AAAHAAAAAAAGAPn/AAAHAAIAAAAHAPj/AAAHAAAAAAAHAPn/AAAKAAAAAAAHAPr/AAAGAAIAAAAEAPf/AAAPAAAAAAAEAPj/AAAPAAEAAAAEAPn/AAAPAAIAAAADAAEAAAAGAAAAAAADAAIAAAAGAAIAAAAEAAEAAAAHAAAAAAAEAAIAAAAHAAIAAAAFAAEAAAAHAAAAAAAGAAEAAAAHAAAAAAAHAAEAAAAHAAAAAAAIAAEAAAAHAAAAAAAJAAEAAAAHAAAAAAAKAAEAAAAHAAEAAAAKAAIAAAAHAAIAAAAFAAIAAAAHAAIAAAAGAAIAAAAHAAIAAAAHAAIAAAAHAAIAAAAIAAIAAAAHAAIAAAAJAAIAAAAHAAIAAAAKAAAAAAAGAAEAAAAKAP//AAAGAAEAAAAKAP7/AAAGAAEAAAAKAP3/AAAGAAEAAAAKAPz/AAAGAAEAAAALAPz/AAAHAAEAAAALAP3/AAAHAAEAAAALAP7/AAAHAAEAAAALAP//AAAHAAEAAAALAAAAAAAHAAEAAAALAAEAAAAHAAEAAAALAAIAAAAHAAIAAAD///v/AAAOAAAAAAD+//v/AAAMAAAAAAA=")
+tile_map_data = PackedByteArray("AADy//v/AAAPAAAAAADy//z/AAAPAAEAAADy//3/AAAPAAIAAADy//7/AAAPAAAAAADy////AAAPAAEAAADy/wAAAAAPAAIAAADy/wEAAAAHAAEAAADy/wIAAAAHAAEAAADz////AAAHAAAAAAD0////AAAGAAAAAAD1////AAAHAAAAAAD2////AAAHAAAAAAD3////AAAHAAAAAAD4////AAAIAAAAAAANAPv/AAAPAAAAAAANAPz/AAAPAAEAAAANAP3/AAAPAAIAAAANAP7/AAAPAAAAAAANAP//AAAPAAEAAAANAAAAAAAPAAIAAAD0/wAAAAAGAAEAAAD0/wEAAAAGAAEAAAD0/wIAAAAGAAIAAAD1/wIAAAAHAAIAAAD2/wIAAAAHAAIAAAD2/wEAAAAHAAEAAAD2/wAAAAAHAAEAAAD3/wAAAAAHAAEAAAD1/wAAAAAHAAEAAAD1/wEAAAAHAAEAAAD3/wIAAAAHAAIAAAD3/wEAAAAHAAEAAAD4/wEAAAAIAAEAAAD4/wAAAAAIAAEAAAD4/wIAAAAIAAIAAADz/wEAAAAHAAEAAADz/wAAAAAHAAEAAADz/wIAAAAHAAEAAAANAPj/AAAPAAAAAAANAPn/AAAPAAEAAAANAPr/AAAPAAIAAAANAPX/AAAPAAAAAAANAPb/AAAPAAEAAAANAPf/AAAPAAIAAAANAPL/AAAPAAAAAAANAPP/AAAPAAEAAAANAPT/AAAPAAIAAADy//j/AAAPAAAAAADy//n/AAAPAAEAAADy//r/AAAPAAIAAADy//X/AAAPAAAAAADy//b/AAAPAAEAAADy//f/AAAPAAIAAAD///v/AAAOAAIAAAD+//v/AAANAAIAAAAFAP//AAAGAAAAAAAFAAAAAAAGAAEAAAAGAP//AAAHAAAAAAAGAAAAAAAHAAEAAAAHAP//AAAHAAAAAAAHAAAAAAAHAAEAAAAIAP//AAAHAAAAAAAIAAAAAAAHAAEAAAAJAP//AAAHAAAAAAAJAAAAAAAHAAEAAAAKAP//AAAHAAAAAAAKAAAAAAAHAAEAAAALAP//AAAIAAAAAAALAAAAAAAIAAEAAAAMAP//AAAGAAAAAAAMAAAAAAAGAAEAAAALAAEAAAAIAAEAAAALAAIAAAAIAAIAAAAFAAIAAAAGAAIAAAAIAAEAAAAHAAEAAAAHAAEAAAAHAAEAAAAGAAEAAAAHAAEAAAAJAAEAAAAHAAEAAAAKAAEAAAAHAAEAAAAFAAEAAAAGAAEAAAAGAAIAAAAHAAIAAAAHAAIAAAAHAAIAAAAIAAIAAAAHAAIAAAAJAAIAAAAHAAIAAAAKAAIAAAAHAAIAAAAMAAEAAAAGAAEAAAAMAAIAAAAGAAEAAAANAAEAAAAHAAEAAAANAAIAAAAHAAEAAAD+//r/AAANAAEAAAD///r/AAAOAAEAAAD8//v/AAANAAEAAAD8//z/AAANAAIAAAD9//v/AAAOAAEAAAD9//z/AAAOAAIAAAD+//z/AAAMAAAAAAD///z/AAANAAAAAAAAAPz/AAAOAAAAAAAAAPn/AAAPAAAAAAAAAPr/AAAPAAEAAAAAAPv/AAAPAAIAAAD5//z/AAAMAAAAAAD6//z/AAANAAAAAAD7//z/AAAOAAAAAAADAPT/AAAPAAAAAAADAPX/AAAPAAEAAAADAPb/AAAPAAIAAAADAPf/AAAPAAAAAAADAPj/AAAPAAEAAAADAPn/AAAPAAIAAADz//n/AAAGAAAAAADz//r/AAAGAAEAAAD0//n/AAAHAAAAAAD1//n/AAAHAAAAAAD0//r/AAAHAAEAAAD2//n/AAAHAAAAAAD3//n/AAAIAAAAAAA=")
 tile_set = SubResource("TileSet_7s3f4")
 
-[node name="Killzone" parent="." instance=ExtResource("7_tsmbm")]
+[node name="Killzone" parent="." instance=ExtResource("7_iyn63")]
 position = Vector2(0, -17)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(0, 71)
 shape = SubResource("WorldBoundaryShape2D_y6k1g")
 
-[node name="GUI" parent="." instance=ExtResource("8_y3vdi")]
+[node name="GUI" parent="." instance=ExtResource("8_1ix84")]
 offset_left = -179.0
 offset_top = -146.0
 offset_right = -139.0
 offset_bottom = -106.0
 scale = Vector2(0.1, 0.1)
 
-[node name="Finish" parent="." instance=ExtResource("9_irrt8")]
-position = Vector2(180, -152)
-nextLevel = 5
+[node name="Finish" parent="." instance=ExtResource("9_4x4hb")]
+position = Vector2(182, -40)
+nextLevel = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
 position = Vector2(-6, 0)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_oyk6k")
 
-[node name="Fans" type="Node" parent="."]
+[node name="WallPlatform" type="Node" parent="."]
 
-[node name="Fan" parent="Fans" instance=ExtResource("11_t7v7a")]
-position = Vector2(-73, 41)
+[node name="Lever" parent="WallPlatform" node_paths=PackedStringArray("platform", "target_position_node") instance=ExtResource("7_lsgss")]
+position = Vector2(-173, -113)
+platform = NodePath("../Platform")
+target_position_node = NodePath("../TargetPlatformMove")
+speed = 25.0
 
-[node name="Fan2" parent="Fans" instance=ExtResource("11_t7v7a")]
-position = Vector2(-29, 41)
+[node name="Platform" parent="WallPlatform" instance=ExtResource("8_sd6f7")]
+position = Vector2(-42, -45)
+rotation = -1.5708
+scale = Vector2(0.75, 1)
+collision_layer = 16
+collision_mask = 10
 
-[node name="Fan3" parent="Fans" instance=ExtResource("11_t7v7a")]
-position = Vector2(17, 41)
-
-[node name="Fan4" parent="Fans" instance=ExtResource("11_t7v7a")]
-position = Vector2(63, 10)
+[node name="TargetPlatformMove" type="Node2D" parent="WallPlatform"]
+position = Vector2(-42, -78)

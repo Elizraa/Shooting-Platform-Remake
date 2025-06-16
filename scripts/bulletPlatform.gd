@@ -8,6 +8,10 @@ var external_force := Vector2.ZERO
 func _physics_process(delta):
 	var internal_velocity = direction.normalized() * speed
 	velocity = (internal_velocity + external_force) * delta
+
+	# Optionally: Stop if hitting a wall
+	if is_on_wall():
+		velocity = Vector2.ZERO
 	move_and_slide()
 	
 	# Reset external force so wind must reapply it each frame
