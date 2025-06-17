@@ -53,6 +53,7 @@ shoot={
 2d_physics/layer_2="player"
 2d_physics/layer_4="platform bullet"
 2d_physics/layer_5="wall for platform"
+2d_physics/layer_6="wall for item"
 
 [rendering]
 

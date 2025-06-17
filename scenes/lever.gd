@@ -11,7 +11,7 @@ func _ready():
 	if platform:
 		original_position = platform.position
 
-func _process(delta):
+func _physics_process(delta):
 	if not platform:
 		return
 
@@ -29,8 +29,8 @@ func _process(delta):
 		if (platform.global_position - target).length() < speed * delta:
 			platform.global_position = target
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	triggered = true
 
-func _on_body_exited(body: Node2D) -> void:
+func _on_body_exited(_body: Node2D) -> void:
 	triggered = false

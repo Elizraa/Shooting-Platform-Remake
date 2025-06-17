@@ -10,4 +10,3 @@ func _ready():
 func reduce_bullet():
 	bullets -= 1
 	bullet_left.text = 'x' + str(bullets)
-	print(bullets)
