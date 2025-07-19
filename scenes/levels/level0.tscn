@@ -1,17 +1,18 @@
-[gd_scene load_steps=16 format=4 uid="uid://bcr4cccut4lib"]
+[gd_scene load_steps=17 format=4 uid="uid://bcr4cccut4lib"]
 
-[ext_resource type="Script" uid="uid://bjwslhv3cn5dl" path="res://scripts/GameManager.gd" id="1_hhnvw"]
-[ext_resource type="FontFile" uid="uid://ce72aqbgp5gf8" path="res://assets/Fonts/PixelOperator8.ttf" id="2_mmvkc"]
-[ext_resource type="PackedScene" uid="uid://b3a1pwjllge5l" path="res://scenes/player.tscn" id="3_xva4l"]
-[ext_resource type="Texture2D" uid="uid://cixu6ngsf0tti" path="res://assets/Terrain/Terrain (16x16).png" id="4_plxfw"]
-[ext_resource type="Texture2D" uid="uid://dw51emc5xdt13" path="res://assets/Background/Blue.png" id="5_i2jqo"]
-[ext_resource type="Texture2D" uid="uid://c4ainto2xuso4" path="res://assets/Background/Gray.png" id="6_fgoa1"]
-[ext_resource type="PackedScene" uid="uid://b7shu34y3lprt" path="res://scenes/killzone.tscn" id="7_03f36"]
-[ext_resource type="PackedScene" uid="uid://dlrrw3ebuuj0e" path="res://scenes/menu.tscn" id="8_m15ul"]
-[ext_resource type="PackedScene" uid="uid://rurki30tstks" path="res://scenes/finish.tscn" id="9_tcqsn"]
+[ext_resource type="Script" uid="uid://bjwslhv3cn5dl" path="res://scripts/GameManager.gd" id="1_oem7y"]
+[ext_resource type="FontFile" uid="uid://ce72aqbgp5gf8" path="res://assets/Fonts/PixelOperator8.ttf" id="2_a76di"]
+[ext_resource type="PackedScene" uid="uid://b3a1pwjllge5l" path="res://scenes/player.tscn" id="3_d3ub6"]
+[ext_resource type="Texture2D" uid="uid://cixu6ngsf0tti" path="res://assets/Terrain/Terrain (16x16).png" id="4_7s2gi"]
+[ext_resource type="Texture2D" uid="uid://dw51emc5xdt13" path="res://assets/Background/Blue.png" id="5_fj52k"]
+[ext_resource type="Texture2D" uid="uid://c4ainto2xuso4" path="res://assets/Background/Gray.png" id="6_1t5oo"]
+[ext_resource type="PackedScene" uid="uid://b7shu34y3lprt" path="res://scenes/killzone.tscn" id="7_m6lg1"]
+[ext_resource type="PackedScene" uid="uid://dlrrw3ebuuj0e" path="res://scenes/menu.tscn" id="8_3asx1"]
+[ext_resource type="PackedScene" uid="uid://rurki30tstks" path="res://scenes/finish.tscn" id="9_ng1gw"]
+[ext_resource type="PackedScene" uid="uid://rfxdgmtaonfs" path="res://scenes/title.tscn" id="10_a76di"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7pft"]
-texture = ExtResource("4_plxfw")
+texture = ExtResource("4_7s2gi")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -274,7 +275,7 @@ texture = ExtResource("4_plxfw")
 4:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ykbi6"]
-texture = ExtResource("5_i2jqo")
+texture = ExtResource("5_fj52k")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 2:0/size_in_atlas = Vector2i(2, 2)
@@ -285,7 +286,7 @@ texture = ExtResource("5_i2jqo")
 0:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_acd57"]
-texture = ExtResource("6_fgoa1")
+texture = ExtResource("6_1t5oo")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 2:0/size_in_atlas = Vector2i(2, 2)
@@ -311,7 +312,7 @@ sources/2 = SubResource("TileSetAtlasSource_acd57")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("1_hhnvw")
+script = ExtResource("1_oem7y")
 bullets = -1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
@@ -325,7 +326,7 @@ offset_left = -178.0
 offset_top = -160.0
 offset_right = -113.0
 offset_bottom = -151.0
-theme_override_fonts/font = ExtResource("2_mmvkc")
+theme_override_fonts/font = ExtResource("2_a76di")
 theme_override_font_sizes/font_size = 8
 text = "Platform: X"
 
@@ -334,7 +335,7 @@ position = Vector2(0, -63)
 zoom = Vector2(3, 3)
 position_smoothing_speed = 7.0
 
-[node name="Player" parent="." instance=ExtResource("3_xva4l")]
+[node name="Player" parent="." instance=ExtResource("3_d3ub6")]
 position = Vector2(69, -167)
 
 [node name="Tilemap" type="Node2D" parent="."]
@@ -351,23 +352,29 @@ position = Vector2(20, 11)
 tile_map_data = PackedByteArray("AAD8//7/AAABAAYAAAAEAPr/AAACAAUAAAD4//n/AAAAAAQAAAD4//r/AAAAAAUAAAD4//v/AAAAAAUAAAD4//z/AAAAAAUAAAD4//3/AAAAAAUAAAD4//7/AAAAAAYAAAD5//n/AAABAAQAAAD5//7/AAABAAYAAAD6//n/AAABAAQAAAD6//7/AAABAAYAAAD7//n/AAABAAQAAAD7//7/AAABAAYAAAD8//n/AAABAAQAAAD9//n/AAABAAQAAAD9//7/AAABAAYAAAD+//n/AAABAAQAAAD+//7/AAABAAYAAAD///n/AAABAAQAAAD///7/AAABAAYAAAAAAPn/AAABAAQAAAAAAP7/AAABAAYAAAABAPn/AAABAAQAAAABAP7/AAABAAYAAAACAPn/AAABAAQAAAACAP7/AAABAAYAAAADAPn/AAABAAQAAAADAP7/AAABAAYAAAAEAPn/AAACAAQAAAAEAPv/AAACAAUAAAAEAPz/AAACAAUAAAAEAP3/AAACAAUAAAAEAP7/AAACAAYAAAADAPj/AAATAAEAAAACAPj/AAARAAEAAAAIAPz/AAAMAAEAAAAJAPz/AAANAAEAAAAJAP3/AAANAAIAAAAKAPz/AAAOAAEAAAAKAP3/AAAOAAIAAADz/wAAAAAHAAQAAADz/wEAAAAHAAUAAAD0/wAAAAAHAAQAAAD0/wEAAAAHAAUAAAD1/wAAAAAIAAQAAAD1/wEAAAAIAAUAAADy/wAAAAAHAAQAAADy/wEAAAAHAAUAAADy/wIAAAAHAAUAAADz/wIAAAAHAAUAAAD0/wIAAAAHAAUAAAD1/wIAAAAHAAUAAAAKAPP/AAAPAAgAAAAKAPT/AAAPAAkAAAAKAPX/AAAPAAoAAAAKAPb/AAAPAAgAAAAKAPf/AAAPAAkAAAAKAPj/AAAPAAoAAADy//j/AAAPAAQAAADy//n/AAAPAAUAAADy//r/AAAPAAYAAADy//v/AAAPAAQAAADy//z/AAAPAAUAAADy//3/AAAPAAUAAADy//7/AAAPAAUAAADy////AAAPAAUAAAAMAPn/AAAPAAkAAAAMAPr/AAAPAAkAAAAMAPv/AAAPAAoAAAAMAPj/AAAPAAgAAAALAPj/AAAMAAkAAAALAPz/AAAMAAkAAAAMAPz/AAAMAAkAAAAIAP//AAAHAAAAAAAIAAAAAAAHAAEAAAAIAAEAAAAHAAEAAAAJAP//AAAHAAAAAAAJAAAAAAAHAAEAAAAJAAEAAAAHAAEAAAAKAP//AAAIAAAAAAAKAAAAAAAIAAEAAAAKAAEAAAAIAAEAAAAIAAIAAAAHAAIAAAAJAAIAAAAHAAIAAAAKAAIAAAAIAAIAAAAHAP//AAAGAAAAAAAHAAAAAAAGAAEAAAAHAAEAAAAGAAEAAAAHAAIAAAAGAAIAAADy//T/AAASAAUAAADy//X/AAAVAAUAAADy//b/AAASAAUAAADy//f/AAASAAYAAADz//T/AAAVAAUAAADz//X/AAAVAAQAAADz//b/AAAVAAUAAADz//f/AAASAAYAAAD0//T/AAAVAAUAAAD0//X/AAAVAAUAAAD0//b/AAASAAUAAAD0//f/AAATAAYAAAD1//T/AAASAAUAAAD1//X/AAASAAUAAAD1//b/AAASAAYAAAD2//T/AAATAAQAAAD2//X/AAATAAUAAAD2//b/AAATAAYAAADx//T/AAASAAUAAADx//X/AAASAAUAAADx//b/AAASAAUAAADx//f/AAARAAYAAAA=")
 tile_set = SubResource("TileSet_7s3f4")
 
-[node name="Killzone" parent="." instance=ExtResource("7_03f36")]
+[node name="Killzone" parent="." instance=ExtResource("7_m6lg1")]
 position = Vector2(0, -17)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(0, 71)
 shape = SubResource("WorldBoundaryShape2D_y6k1g")
 
-[node name="Menu" parent="." instance=ExtResource("8_m15ul")]
+[node name="Menu" parent="." instance=ExtResource("8_3asx1")]
 offset_left = -2.0
 offset_top = -47.0
 offset_right = -2.0
 offset_bottom = -47.0
 
-[node name="Finish" parent="." instance=ExtResource("9_tcqsn")]
+[node name="Finish" parent="." instance=ExtResource("9_ng1gw")]
 position = Vector2(220, -84)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
 position = Vector2(-25, 13)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_6q6d4")
+
+[node name="Title" parent="." instance=ExtResource("10_a76di")]
+offset_left = -30.0
+offset_top = -138.0
+offset_right = -30.0
+offset_bottom = -138.0

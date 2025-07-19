@@ -86,6 +86,7 @@ collision_layer = 0
 collision_mask = 40
 gravity_scale = 0.3
 can_sleep = false
+lock_rotation = true
 script = ExtResource("1_yk2u2")
 
 [node name="Area2D" type="Area2D" parent="."]

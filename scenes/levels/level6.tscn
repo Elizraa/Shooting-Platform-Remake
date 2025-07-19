@@ -407,7 +407,7 @@ friction = 0.0
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_wrd1n")
-bullets = -1
+bullets = 3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
 layer = 4
@@ -469,16 +469,17 @@ scale = Vector2(0.1, 0.1)
 
 [node name="Finish" parent="." instance=ExtResource("9_000ip")]
 position = Vector2(182, -40)
-nextLevel = 6
+nextLevel = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
-position = Vector2(-6, 0)
+position = Vector2(1, 0)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_oyk6k")
 
-[node name="Key" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("12_2rkt7")]
+[node name="Key" parent="." node_paths=PackedStringArray("doors", "sprite") instance=ExtResource("12_2rkt7")]
 position = Vector2(25, -134)
 gravity_scale = 0.21
+doors = NodePath("../Boxes")
 sprite = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Key"]
@@ -494,23 +495,13 @@ frame_progress = 0.674173
 position = Vector2(115, -29)
 collision_layer = 33
 collision_mask = 0
-
-[node name="Fruit" type="Sprite2D" parent="Boxes/Box"]
-scale = Vector2(0.577507, 0.577507)
-texture = ExtResource("11_sdnvp")
-region_enabled = true
-region_rect = Rect2(139, 9, 11, 14)
+custom_texture = ExtResource("11_sdnvp")
 
 [node name="Box2" parent="Boxes" instance=ExtResource("12_53v2u")]
 position = Vector2(115, -49)
 collision_layer = 33
 collision_mask = 0
-
-[node name="Fruit" type="Sprite2D" parent="Boxes/Box2"]
-scale = Vector2(0.577507, 0.577507)
-texture = ExtResource("11_sdnvp")
-region_enabled = true
-region_rect = Rect2(139, 9, 11, 14)
+custom_texture = ExtResource("11_sdnvp")
 
 [node name="WallPlatform" type="Node" parent="."]
 
